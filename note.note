@@ -77,4 +77,10 @@
   math      数学工具    math.pi  math.log  math.sqrt  math.pow  可以import math; dir(math)&help(math);查看详情
   random    随机模块    random.random()  random.choice([1,2,3,4])
   re        正则模块
-
+  os        python与系统交互模块
+                os.getcwd()  获取当前所在目录
+                os.chdir(param) 切换目录
+                os.system(cmd)  执行系统shell命令
+  shutil    python处理文件高级接口
+                 shutil.copyfile('data.db', 'archive.db')
+                 shutil.move('/build/executables', 'installdir')
