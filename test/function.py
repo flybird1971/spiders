@@ -52,3 +52,19 @@ print "*"*33
 show (1,2,3,4,5,6)
 print "*"*33
 show(1,1,2,xs=1,y=2)
+
+print("*"*43)
+def recurise (n):
+    if( n<=0 ) :
+        return 1
+    return n * recurise(n-1)
+t = recurise(10)
+print(t)
+
+print("*"*43)
+list = range(1,11,1)
+res = reduce(lambda x,y:x*y,list)
+print(res)
+
+
+
