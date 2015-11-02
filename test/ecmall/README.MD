@@ -67,6 +67,7 @@
         bank_user   银行注册用户记录
         bank_config 银行系统相关配置
         flow.record 银行流水记录
+        login_user  记录用户登录状态
 
         shop_goods   商城商品数据
         shop_user    商城用户数据
