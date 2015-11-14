@@ -85,6 +85,33 @@ def printGoods(data):
     print strformat % tuple(fields)
 
     for tmp in data:
+        numLine = len(fields)
+        strformat = ""
+        while numLine>0:
+            strformat = strformat + "|\t\t%-12s\t\t"
+            numLine = numLine - 1
+        print "-"*150
+        print strformat % (tmp.get('id'),tmp.get('name'),tmp.get('type'),tmp.get('price'),tmp.get('num'))
+    return True
+
+def printPayGoods(data):
+    """
+    打印商品列表
+    """
+    if not data :
+        print u"无商品"
+        return  False
+
+    fields = ['id',u'商品名称',u'商品类型',u"商品价格",u"商品数量"]
+    numLine = len(fields)
+    strformat = ""
+    while numLine>0:
+            strformat = strformat + "|\t\t%-12s\t\t"
+            numLine = numLine - 1
+    print "-"*150
+    print strformat % tuple(fields)
+
+    for tmp in data:
         numLine = len(tmp)
         strformat = ""
         while numLine>0:

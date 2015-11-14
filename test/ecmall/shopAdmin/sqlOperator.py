@@ -72,6 +72,33 @@ def updateData(goodsId,data):
     os.rename(path+'.tmp',path)
     return True
 
+def decreaseGoods(goodsId,num):
+    """
+    更新商品库存
+    """
+    print "update............."
+    try:
+        fw = open(path+".tmp",'wb+')
+        fr = open(path,'rb+')
+        for line in fr.xreadlines():
+            try:
+                goodsInfo = json.loads(line)
+                if str(goodsInfo.get('id')) == str(goodsId) :
+                    goodsInfo['num'] = int(goodsInfo['num']) - num
+                line = json.dumps(goodsInfo)
+                fw.write(line+"\n")
+            except ValueError,e:
+                continue
+    except IOError:
+        raise MyException,'file error'
+    finally:
+        fw.close()
+        fr.close()
+    os.remove(path)
+    os.rename(path+'.tmp',path)
+    return True
+
+
 def delData(goodsId):
      """
         删除商品数据

@@ -14,8 +14,7 @@ import bank.sqlOperator as cardSql
 """
 def readConfig():
     configData = sql.readConfig()
-    for tmp in configData:
-        print tmp
+    return configData
 
 def setConfig(data):
     return sql.setConfig(data)

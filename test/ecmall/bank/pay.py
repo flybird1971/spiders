@@ -44,15 +44,17 @@ def sysAccount(debitCardNo,creditCardNo,money):
     return sql.transferMoney(debitCardNo,creditCardNo,money)
 
 
-def pay():
+def pay(creditCardNO=False,money=False):
     print u"\n\n\n +++++++++++++你已经进入第三方支付相关服务 ： +++++++++++++"
     debitCardNo = inputCardNoAndPwd()
     if not debitCardNo :return False
 
-    money = inputMoney()
+    if not money:
+        money = inputMoney()
     if not money: return False
 
-    creditCardNO = inputCreditCardNo()
+    if not creditCardNO:
+        creditCardNO = inputCreditCardNo()
     if not creditCardNO :return  False
 
     if not sysAccount(debitCardNo,creditCardNO,money):
