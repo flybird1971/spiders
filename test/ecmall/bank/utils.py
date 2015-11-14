@@ -22,3 +22,20 @@ def uniqueNo():
     for t in xrange(18):
         cardNo.append(str(random.randint(0,9)))
     return ''.join(cardNo)
+
+def printTable(data):
+    """
+    打印表格
+    """
+    index = 0
+    for tmp in data:
+        numLine = len(tmp)
+        strformat = ""
+        while numLine>=0:
+            strformat = strformat + "| \t\t\t %s \t\t\t "
+            numLine = numLine - 1
+        strformat = strformat
+        print "-"*66
+        print strformat % (index,tmp.keys().pop())
+        index = index + 1
+    return True

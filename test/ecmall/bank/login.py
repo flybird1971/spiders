@@ -18,6 +18,7 @@ def login(cardNo,passwd):
     return True
 
 def loginStart():
+    print u"\n\n\n +++++++++++++你已经进入登录相关服务 ： +++++++++++++ "
     while True:
         cardNo = raw_input(u"输入银行卡号 或者 输入q退出登录：")
         if cardNo == 'q':return False
@@ -27,6 +28,7 @@ def loginStart():
             print u"卡号或者密码错误，请重新登录 "
             continue
         break
+    return True
 
 if __name__ == "__main__":
     loginStart()
