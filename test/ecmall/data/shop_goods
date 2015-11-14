@@ -1,3 +1,4 @@
 {"price": "12.21", "num": 92, "type": "friut", "name": "apple", "id": 1}
 {"price": "12.1", "num": 4, "type": "friut", "name": "bannar", "id": 2}
 {"price": "12", "num": 17, "type": "sss", "name": "testsss", "id": 3}
+{"price": "122", "num": "12", "type": "d", "name": "dd", "id": 6}
