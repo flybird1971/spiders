@@ -10,7 +10,8 @@ import flow
     since  : 2015-11-02 12:23:44
 """
 
-path = os.getcwd()+'/data/bank_user'
+path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/bank_user'))
+# path = os.getcwd()+'/data/bank_user'
 def writeData(userinfo):
     """
     申请银行卡成功后，用户信息写库
@@ -158,7 +159,8 @@ def transferMoney(debitCardNo,creditCardNo,money):
     print u"账号 %s 成功转出 %s 元,共计%s元 " % (debitCardNo,money,str(debitNewMoney))
     return True
 
-markPath = os.getcwd()+'/data/login_user'
+# markPath = os.getcwd()+'/data/login_user'
+markPath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/login_user'))
 def markLoginSuccess(cardNo):
     """
     记录登录状态
@@ -182,7 +184,8 @@ def readLoginCardNo():
 ###  流水
 ##########################################################
 
-flowPath =os.getcwd()+ '/data/bank_flow'
+# flowPath =os.getcwd()+ '/data/bank_flow'
+flowPath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/bank_flow'))
 
 def writeFlow(data):
     """
