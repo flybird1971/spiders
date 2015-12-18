@@ -31,5 +31,5 @@ class ZaobaoSpider(scrapy.Spider):
     def parse(self, response):
         trs = response.xpath('//*[@id="hot-novel"]/div[2]/div[1]/ul/li[3]/a')
         for tr in trs:
-            t = trs.xpath('a/text()').extract()
+            trs.xpath('a/text()').extract()
         pass
