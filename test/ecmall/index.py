@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 #coding:utf8
-import sys,os,re
 import  admin_index
 import  bank_index
 import  shop_index
@@ -23,6 +22,7 @@ def index():
         num = utils.printTableX(service)
         if num == -1:return False
         result = service[num].values().pop()()
+        print result;
         print u"\n\n************************* app主界面 *******************************\n"
     print u"------------- end -------------"
     return True
