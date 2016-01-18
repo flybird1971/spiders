@@ -151,8 +151,9 @@ def firstLast(contents):
         lines.reverse()
         last = getFirstLine(lines)
         return first, last
-    except Exception, IOError:
+    except (Exception, IOError),e:
         f.close()
+        print str(e)
 
 
 def download(url, proccess=firstLast):
@@ -162,8 +163,8 @@ def download(url, proccess=firstLast):
         if retval:
             result = proccess(retval)
         return result
-    except Exception, IOError:
-        print "has error"
+    except (Exception, IOError),e:
+        print "has error %s " % str(e)
 
 url = "http://blog.csdn.net/lanyuanershe/article/details/8083425"
 url = "http://www"
@@ -304,8 +305,54 @@ def loggend(when):
         print "has error %s " % (str(e))
 
 
-@loggend('pres')
+@loggend('pre')
 def show(name):
     print "name is %s " % (name)
 
-show('joke')
+# show('joke')
+
+
+print "*"*88
+
+j,k=1,2
+def proc1():
+    j,k=3,4
+    print "j==%d and k==%d" % (j,k)
+    k = 5
+
+def proc2():
+    j=6
+    proc1()
+    print "j==%d and k==%d" % (j,k)
+
+k=7
+# proc1()
+# print "j==%d and k==%d" % (j,k)
+
+# j=8
+# proc2()
+# print "j==%d and k==%d" % (j,k)
+
+print "*"*88
+# yield生成器
+def simpleGenary():
+    yield 1
+    yield "Good By"
+
+
+for i in simpleGenary():
+    print i
+
+def count(startNum=0):
+    while True:
+        val = (yield startNum)
+        if val is not None:
+            startNum = val
+        else:
+            startNum += 1
+
+t = count()
+print t.next()
+print t.send(12)
+print t.next()
+print t.close()
