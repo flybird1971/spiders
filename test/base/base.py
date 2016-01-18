@@ -1,9 +1,10 @@
 #coding:utf8
 __author__ = 'flybird1971'
 
-name = raw_input("please input name : ")
-age = raw_input("please input age : ")
-sex = input("please input sex : ")
+# name = raw_input("please input name : ")
+# age = raw_input("please input age : ")
+# sex = input("please input sex : ")
+name,age,sex = 'sale',21,1
 
 if age > 40 :
     print "age : %s" % (age)
@@ -17,8 +18,8 @@ print sum
 
 
 print """
-      show you enter sex :
-          name : %s
-          age  : %d
-          sex  : %d
+    show you enter sex :
+        name : %s
+        age  : %d
+        sex  : %d
 """  % (name,int(age),sex)

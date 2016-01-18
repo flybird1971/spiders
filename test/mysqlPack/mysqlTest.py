@@ -82,7 +82,7 @@ try:
     print cur.fetchmany(cur.rowcount)
 
     #事务自动开启提交
-    #connect.commit()
+    connect.commit()
 
     #关闭游标
     cur.close()
@@ -93,4 +93,5 @@ except mdb.Error,e:
 finally:
     if connect:
         #关闭数据库连接
+        cur.close()
         connect.close()

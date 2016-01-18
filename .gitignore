@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+.idea/*
 .idea/workspace.xml
 .tags
 .tags_sorted_by_file

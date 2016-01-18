@@ -1,8 +1,10 @@
-#encoding:utf8
-#import module
+#!/usr/bin/env python
+# encoding:utf8
+# import module
+
 from module.module import randStr
 import string
-#导入包
+# 导入包
 import pack.testPack as test
 __author__ = 'flybird1971'
 
