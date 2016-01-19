@@ -5,5 +5,6 @@ __author__ = 'flybird1971'
 intergers : 整数package，用于基础数据类型 int,long,float的练习
 sequences : 序列package，用于元组,列表,字典,字符串的练习
 functions : 函数package，用于函数相关知识点的练习
+modules   : 模块package，用于模块相关知识点的练习
 .....
 """
