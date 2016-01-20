@@ -59,7 +59,7 @@ def fileArgs(fn, mode, args):
 def myconnect(sock, host, port):
     try:
         sock.connect((host, port))
-    except socket.errno, args:
+    except (socket.error, socket.gaierror), args:
         myargs = updArgs(args)
         if len(myargs) == 1:
             myargs = (errno.ENXIO, myargs[0])
@@ -85,9 +85,9 @@ def testFile():
             f = myopen(fn, eachTest[1])
         except FileError, args:
             print "%s : %s \n" % (args.__class__.__name__, args)
-    else:
-        print fn, "open ok .... perm ignored \n"
-        f.close()
+        else:
+            print fn, "open ok .... perm ignored \n"
+    f.close()
 
     os.chmod(fn, 0777)
     os.unlink(fn)
@@ -96,12 +96,12 @@ def testFile():
 def testnet():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    for eachHost in ('deli', 'www'):
+    for eachHost in (('127.0.0.1', 8086), ('127.0.0.1', 8787), ('127.0.0.1', 8087)):
         try:
-            myconnect(s, eachHost, 8080)
+            myconnect(s, eachHost[0], eachHost[1])
         except NetworkError, args:
             print "%s : %s " % (args.__class__.__name__, args)
 
 if __name__ == "__main__":
-    #testFile()
+    testFile()  #windown下权限验证不合法
     testnet()
