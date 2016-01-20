@@ -37,3 +37,24 @@ print "-------------- top globals and locals -------------- "
 CollectionHelper.printEx(globals())
 print "*" * 22 + "local" + "*" * 22
 CollectionHelper.printEx(locals())
+
+print "*" * 88
+
+# import os.path as path
+# print help(path)
+# from os import path
+# print dir(path)
+t = __import__("utils.CollectionHelper", globals(), locals(), ['CollectionHelper'])
+
+print help(t)
+print t.__file__
+
+
+def importAs(moduleName):
+    try:
+        temp = __import__(moduleName)
+        return temp
+    except Exception, e:
+        print "has errror %s " % str(e)
+
+# tes = importAs('os.pipe')
