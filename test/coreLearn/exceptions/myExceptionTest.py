@@ -79,8 +79,7 @@ def testFile():
     f = open(fn, 'w')
     f.close()
 
-    for eachTest in ((0, 'r'), (1, 'r'), (3, 'w'), (5, 'w')):
-        print eachTest
+    for eachTest in ((0, 'r'), (0100, 'r'), (0400, 'w'), (0500, 'w')):
         try:
             os.chmod(fn, eachTest[0])
             f = myopen(fn, eachTest[1])
@@ -104,5 +103,5 @@ def testnet():
             print "%s : %s " % (args.__class__.__name__, args)
 
 if __name__ == "__main__":
-    testFile()
-    # testnet()
+    #testFile()
+    testnet()
