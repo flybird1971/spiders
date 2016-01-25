@@ -13,10 +13,17 @@ class SpidersItem(scrapy.Item):
     # name = scrapy.Field()
     pass
 
+
 class DemoItem(scrapy.Item):
     title = scrapy.Field()
-    href  = scrapy.Field()
-    desc  = scrapy.Field()
+    href = scrapy.Field()
+    desc = scrapy.Field()
     pass
 
 
+class StackOverflowItem(scrapy.Item):
+    title = scrapy.Field()
+    tags = scrapy.Field()
+    body = scrapy.Field()
+    href = scrapy.Field()
+    pass
