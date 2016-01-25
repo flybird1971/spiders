@@ -62,3 +62,34 @@ son = Chird('son', 'male')
 # print "instance.__module__\t:\t", son.__module__
 # print "\nClass.__class__\t:\t", Chird.__class__
 # print "instance.__class__\t:\t", son.__class__
+
+
+class BaseObject(object):
+
+    total = 0
+
+    def __init__(self, name, age=18):
+        self.name = name
+        self.__age = age
+
+    def getName(self): return self.name
+
+    def setAge(self, age): self.__age = age
+
+b = BaseObject('joke', 12)
+print dir(BaseObject)
+print "-" * 180
+print BaseObject.__class__
+print BaseObject.__dict__
+print "*" * 180
+print vars(BaseObject)
+print "*" * 180
+print dir(b)
+print "-" * 180
+print b.__class__, b.__dict__
+print "-" * 180
+print vars(b)
+
+
+# print type(b)
+# print type(BaseObject)
