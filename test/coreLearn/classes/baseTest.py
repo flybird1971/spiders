@@ -48,8 +48,9 @@ class Chird(Parent):
         Parent.__del__(self)
         print "delete Chird class  .... "
 
-# parent = Parent('father', 33)
-son = Chird('son', 'male')
+if __name__ == '__main__':
+    # parent = Parent('father', 33)
+    son = Chird('son', 'male')
 
 # print "*" * 88
 # print "Class.__name__\t:\t", Chird.__name__
@@ -76,19 +77,20 @@ class BaseObject(object):
 
     def setAge(self, age): self.__age = age
 
-b = BaseObject('joke', 12)
-print dir(BaseObject)
-print "-" * 180
-print BaseObject.__class__
-print BaseObject.__dict__
-print "*" * 180
-print vars(BaseObject)
-print "*" * 180
-print dir(b)
-print "-" * 180
-print b.__class__, b.__dict__
-print "-" * 180
-print vars(b)
+if __name__ == '__main__':
+    b = BaseObject('joke', 12)
+    print dir(BaseObject)
+    print "-" * 180
+    print BaseObject.__class__
+    print BaseObject.__dict__
+    print "*" * 180
+    print vars(BaseObject)
+    print "*" * 180
+    print dir(b)
+    print "-" * 180
+    print b.__class__, b.__dict__
+    print "-" * 180
+    print vars(b)
 
 
 # print type(b)
