@@ -10,6 +10,7 @@ __author__ = 'flybird1971'
 
 """本模块主要用于面向对象相关知识点的练习
 本package模块如下
-baseTest : 面向对象基础知识点练习
-exTest   : 测试使用
+baseTest   : 面向对象基础知识点练习
+test       : 测试使用
+package.py : 包装特性测试
 """
