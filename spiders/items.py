@@ -5,25 +5,32 @@
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from scrapy.item import Item,Field
 
 
-class SpidersItem(scrapy.Item):
+class BsbdjItem(Item):
+    name = Field()
+    url = Field()
+
+class SpidersItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
 
+class CSDNItem(Item):
+    name = Field()
+    url = Field()
 
-class DemoItem(scrapy.Item):
-    title = scrapy.Field()
-    href = scrapy.Field()
-    desc = scrapy.Field()
+class DemoItem(Item):
+    title = Field()
+    href = Field()
+    desc = Field()
     pass
 
 
-class StackOverflowItem(scrapy.Item):
-    title = scrapy.Field()
-    tags = scrapy.Field()
-    body = scrapy.Field()
-    href = scrapy.Field()
+class StackOverflowItem(Item):
+    title = Field()
+    tags = Field()
+    body = Field()
+    href = Field()
     pass
