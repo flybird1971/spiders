@@ -38,3 +38,15 @@ dot = re.search('.name','\r\tname')
 print dot
 if dot:
     print dot.group()
+
+
+allregex = re.findall(r'(a((\w+)c))','abc,eft,cde,acc,ew,aec,wee,aqc')
+if allregex:
+    print allregex
+
+t = type(dir)
+typeRegex = re.compile(r'<type\s+\'(\w+?)\'>')
+res = typeRegex.search(str(t))
+print res
+if res :
+    print res.group(1)
