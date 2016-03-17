@@ -34,3 +34,12 @@ class StackOverflowItem(Item):
     body = Field()
     href = Field()
     pass
+
+class XmlFeedItem(Item):
+    title = Field()
+    link = Field()
+    description = Field()
+    pubDate = Field()
+    guid = Field()
+    img_url = Field()
+    pass

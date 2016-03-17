@@ -14,16 +14,16 @@ class SpidersPipeline(object):
         return item
 
 
-# class CSDNPipeline(object):
+class CSDNPipeline(object):
 
-#     def __init__(self):
-#         self.file = codecs.open('res.json', mode='a+',encoding='utf-8')
+    def __init__(self):
+        self.file = codecs.open('res.json', mode='a+',encoding='utf-8')
 
-#     def process_item(self, item, spider):
-#         line = json.dumps(dict(item)) + '\n'
-#         self.file.write(line.decode('unicode_escape'))
+    def process_item(self, item, spider):
+        line = json.dumps(dict(item)) + '\n'
+        self.file.write(line.decode('unicode_escape'))
 
-#         return item
+        return item
 
 
 class BsbdjPipeline(object):
@@ -32,5 +32,15 @@ class BsbdjPipeline(object):
         self.file = codecs.open('bsbdj_res.json',mode='a+',encoding="utf-8")
 
     def process_item(self,item,spider):
+        line = json.dumps(dict(item)) + "\n"
+        self.file.write(line.decode('unicode_escape'))
+
+class XmlFeedPipeline(object):
+
+    def __init__(self):
+        self.file = codecs.open('xml_feed_zhihu.json',mode='a+',encoding="utf-8")
+
+    def process_item(self,item,spider):
+
         line = json.dumps(dict(item)) + "\n"
         self.file.write(line.decode('unicode_escape'))

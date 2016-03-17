@@ -14,7 +14,7 @@ class BsbdjSpider(Spider):
 
     allowed_domains = ['budejie.com']
 
-    download_delay = 1
+    # download_delay = 1
 
     start_urls = [
         'http://www.budejie.com/new-video/',
