@@ -7,6 +7,7 @@
 
 import json
 import codecs
+import MySQLdb
 
 
 class SpidersPipeline(object):
@@ -17,7 +18,7 @@ class SpidersPipeline(object):
 class CSDNPipeline(object):
 
     def __init__(self):
-        self.file = codecs.open('res.json', mode='a+',encoding='utf-8')
+        self.file = codecs.open('res.json', mode='a+', encoding='utf-8')
 
     def process_item(self, item, spider):
         line = json.dumps(dict(item)) + '\n'
@@ -29,18 +30,19 @@ class CSDNPipeline(object):
 class BsbdjPipeline(object):
 
     def __init__(self):
-        self.file = codecs.open('bsbdj_res.json',mode='a+',encoding="utf-8")
+        self.file = codecs.open('bsbdj_res.json', mode='a+', encoding="utf-8")
 
-    def process_item(self,item,spider):
+    def process_item(self, item, spider):
         line = json.dumps(dict(item)) + "\n"
         self.file.write(line.decode('unicode_escape'))
+
 
 class XmlFeedPipeline(object):
 
     def __init__(self):
-        self.file = codecs.open('xml_feed_zhihu.json',mode='a+',encoding="utf-8")
+        self.file = codecs.open('xml_feed_zhihu.json', mode='a+', encoding="utf-8")
 
-    def process_item(self,item,spider):
+    def process_item(self, item, spider):
 
         line = json.dumps(dict(item)) + "\n"
         self.file.write(line.decode('unicode_escape'))
