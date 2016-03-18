@@ -33,9 +33,8 @@ class TestxmlfeedSpider(XMLFeedSpider):
         txtList = [ d.encode('utf-8') for d in node.xpath('item/description/text()').extract() ]
         for txt in txtList:
             extendInfo = self.parse_description(txt)
-            if extendInfo:
-                item['img_url'].append(extendInfo['img_url'])
-                item['description'].append(extendInfo['description'])
+            item['img_url'].append(extendInfo['img_url'])
+            item['description'].append(extendInfo['description'])
 
         item['pubDate'] = [ p.encode('utf-8') for p in node.xpath('item/pubDate/text()').extract() ]
         item['guid'] = [ g.encode('utf-8') for g in node.xpath('item/guid/text()').extract() ]
@@ -44,9 +43,9 @@ class TestxmlfeedSpider(XMLFeedSpider):
 
     def parse_description(self,text):
 
-        if not text: return ''
-
         extendItem = {'img_url':'','description':''}
+        if not text: return extendItem
+
         imgUrls = self.img_pattern.search(text)
         if imgUrls :
             extendItem['img_url'] = imgUrls.group(1)
