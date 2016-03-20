@@ -8,22 +8,90 @@ import MySQLdb
 class SQL(object):
 
     def __init__(self):
+        self.select = ''
+        self.from = ''
+        self.groupBy = ''
+        self.having = ''
+        self.where = ''
+        self.join = ''
+        self.joinWith = ''
+        self.limit = ''
+        self.offset = ''
+        self.orderBy = ''
+        self.sql = ''
         pass
 
-    def write(self, data):
+    def addGroupBy(self):
         pass
 
-    def read(self):
+    def addOrderBy(self):
         pass
 
-    def setWhere(self, where):
-        return self
+    def addSelect(self):
+        pass
 
-    def setLimit(self, limit):
-        return self
+    def addWhere(self):
+        pass
 
-    def setOffset(self, offset):
-        return self
+    def addHaving(self):
+        pass
+
+    def addOnCondition(self):
+        pass
+
+    def count(self):
+        pass
+
+    def exists(self):
+        pass
+
+    def from(self):
+        pass
+
+    def groupBy(self):
+        pass
+
+    def having(self):
+        pass
+
+    def innerJoin(self):
+        pass
+
+    def join(self):
+        pass
+
+    def joinWith(self):
+        pass
+
+    def leftJoin(self):
+        pass
+
+    def limit(self):
+        pass
+
+    def max(self):
+        pass
+
+    def min(self):
+        pass
+
+    def offset(self):
+        pass
+
+    def one(self):
+        pass
+
+    def orWhere(self):
+        pass
+
+    def orderBy(self):
+        pass
+
+    def select(self):
+        pass
+
+    def where(self):
+        pass
 
     def createCommand(self, sql):
         return self
