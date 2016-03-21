@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-import scrapy
+from spiders.sqlPDO.mysqlTest import Mysql 
+
+# config = {'host':'127.0.0.1','user':'root','passwd':'123456'}
+# database = 'babel'
+
+# db =  SQL(config,database)
+# sql = 'select * from bb_spider_rules' 
+# db.findOne(sql)
 
 
-class TestSpider(scrapy.Spider):
-    name = "test"
-    allowed_domains = ["test.com"]
-    start_urls = (
-        'http://www.test.com/',
-    )
 
-    def parse(self, response):
-        pass

@@ -36,10 +36,13 @@ class StackOverflowItem(Item):
     pass
 
 class XmlFeedItem(Item):
+    source_url = Field()
+    unique_code = Field()
+    rule_id = Field()
     title = Field()
-    link = Field()
     description = Field()
-    pubDate = Field()
-    guid = Field()
     img_url = Field()
+    video_url = Field()
+    public_time = Field()
+    create_time = Field()
     pass
