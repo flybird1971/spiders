@@ -4,7 +4,8 @@ import redis
 import time
 
 SLEEP_TIMES = 60
-spiderCount = {'max_run_spider' : 10, 'current_run_spider' : 0}
+spiderCount = {'max_run_spider': 10, 'current_run_spider': 0}
+
 
 def getSpiderConfig(sleepTimes=SLEEP_TIMES):
     """获取爬虫配置项，若果redis为空，则休眠60s"""
@@ -20,7 +21,7 @@ def getSpiderConfig(sleepTimes=SLEEP_TIMES):
 
 def runSpider():
 
-    while  True:
+    while True:
         spiderConfig = getSpiderConfig()
         # scrapy crawl xmlfeedspider
         spiderCount['current_run_spider'] -= 1
